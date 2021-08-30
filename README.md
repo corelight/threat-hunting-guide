@@ -43,7 +43,7 @@ Each ATT&CK Tactic (goal or phase) is housed in its own folder, numbered with th
 |---|
 |[Introduction](./0_Introduction)|
 |[TA0001: Initial Access](./TA0001_Initial_Access)|
-|[TA0002: Execution](./TA002_Execution)|
+|[TA0002: Execution](./TA0002_Execution)|
 |[TA0003: Persistence](./TA003_Persistence)|
 |[TA0005: Defense Evasion](./TA005_Defense_Evasion)|
 |[TA0006: Credential Access](./TA006_Credential_Access)|
