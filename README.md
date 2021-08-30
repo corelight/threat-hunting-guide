@@ -16,7 +16,7 @@ All work is maintained under the [Creative Commons Attribution-NonCommercial-Sha
 
 Corelight, Inc. owns the work here, and it is used for Corelight marketing purposes (e.g. webinars, printed collateral, website prose). Any content you contribute here can be used for these purposes. This content may not be used for commercial purposes by any other organization besides Corelight, Inc.
 
-Corelight, Inc. retains the right to freely recognize contributors listed in the CREDITS file in this repository, and publish, electronically and in print, their posts, likeness, and name from GitHub. If you wish to be recognized for your contributions, please place your name in the [CREDITS file](./CREDITS).
+Corelight, Inc. retains the right to freely recognize contributors listed in the CREDITS file in this repository, and publish, electronically and in print, their posts, likeness, and name from GitHub. If you wish to be recognized for your contributions, please place your name in the [CREDITS file](./CREDITS.md).
 
 The content here may be freely shared.
 
