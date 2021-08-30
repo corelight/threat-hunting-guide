@@ -32,7 +32,7 @@ However, the people that make up Corelight are exactly that: **people**. We are 
 There are two main ways to contribute:
 
 - Forking the repository, making changes, and submitting those changes back to our repository via a pull request
-- Opening an [issue](./issues) pointing out any issues with the content, or offering suggestions of changes or additions
+- Opening an [issue](https://github.com/corelight/threat-hunting-guide/issues) pointing out any issues with the content, or offering suggestions of changes or additions
 
 Where possible, contributions should be aligned to the [MITRE ATT&CK Framework](https://attack.mitre.org/).
 Each ATT&CK Tactic (goal or phase) is housed in its own folder, numbered with the numbers assigned by MITRE. Inside of each Tactic folder is a file for each Technique. Technique files should have a prefix matching the Technique number assigned by MITRE.
