@@ -24,13 +24,13 @@ Hunting has several positive outcomes. The first is you might find artifacts of 
 
 You may discover network or software misconfigurations that pose a threat, either because they degrade network performance or introduce a vulnerability. Next, the hunt could yield run-of-the-mill infections such as adware, or  other dormant malware that aren’t directly targeting your organization &mdash but are still a threat. Lastly, resource abuse and Shadow IT, services that are not officially supported, can introduce risk through degraded network performance or new adversary attack vectors. Every hunt teaches you something new about the network which will aid in your next investigation.
 
-##Why hunt with network data?
+## Why hunt with network data?
 
 Packets. Don’t. Lie.
 
 It’s really as simple as that. If a network-resident intruder is active in your network, there will be network artifacts.  In artifacts, there are clues to what is happening, or better yet, an exact moment-for-moment story of what happened. For example, if a command and control channel uses DNS as a transport mechanism, there will be DNS queries and replies. Additionally, the IP address(es) that are on the ends of a TCP connection must be accurate, they cannot be spoofed if data is exchanged. All attacks traverse the network, unless they are isolated to one host, so there will be packets.
 
-##Corelight logs nomenclature
+## Corelight logs nomenclature
 
 Corelight provides data-centric solutions that analyze network traffic and enhance automation tools by transforming network traffic into linked logs and extracting files. The central log is the `conn` log, which documents general information about all network sessions.
 
