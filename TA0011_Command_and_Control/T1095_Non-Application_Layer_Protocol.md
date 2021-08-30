@@ -8,7 +8,7 @@ With this data, you have the information needed to discover abnormally large or 
 
 ```
 _path: socks
-"uid: C5u9ig4ACZvweN5my6
+uid: C5u9ig4ACZvweN5my6
 id.orig_h: 192.168.0.2
 id.orig_p: 55951
 id.resp_h: 192.168.0.1
