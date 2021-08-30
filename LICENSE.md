@@ -1,0 +1,1 @@
+All work is maintained under the [Creative Commons Attribution-NonCommercial-ShareAlike license](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode). Please read this license, understand it, and decide whether you agree with it before deciding whether to contribute to this project. If you contribute to the project, you are agreeing to the license terms.
