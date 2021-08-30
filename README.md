@@ -1,5 +1,3 @@
-![Corelight Logo](./images/logo-corelight.png)
-
 # Corelight Threat Hunting Guide (working copy)
 
 This repository serves as the working data for the Corelight Threat Hunting Guide. The source prose which is maintained here is periodically put through editing, layout, and graphic design, and then published as a PDF file and distributed by Corelight, Inc. (“Corelight”). There is not a definitive schedule for these actions, but historically a new release is made every six to twelve months.
