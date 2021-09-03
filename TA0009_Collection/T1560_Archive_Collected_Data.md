@@ -13,3 +13,10 @@ To search for compressed files:
   - `text/*`
   - `application/xml`
   - `application/chrome-ext`
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Multiple Compressed Files Transferred Outbound|https://tdm.socprime.com/tdm/info/uslXmM2xWmWw |
+|Multiple Compressed Files Transferred over HTTP|https://tdm.socprime.com/tdm/info/rJDgVmuJJCA7 |

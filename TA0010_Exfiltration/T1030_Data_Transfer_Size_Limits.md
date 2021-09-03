@@ -11,3 +11,11 @@ The second method analyzes the frequency, and sizes, of outbound transfers from 
 1. Generate a table from the `conn` log including `id.orig_h`, `id.resp_h`, `id.resp_p`, and `count(orig_bytes)`.
 2. Sort the results by the largest `count(orig_bytes)`.
 3. Examine the results and determine the reason for all the connections with the same amount of data flowing from the source to the destination.
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Multiple Files sent over HTTP with abnormal requests|https://tdm.socprime.com/tdm/info/yFSzCXxDDxWS |
+|Client Sending Large Amount of Data|https://tdm.socprime.com/tdm/info/uOh8GJpa4nc8 |
+|Client transferring large amount of data over HTTP|https://tdm.socprime.com/tdm/info/uuvybWNTYn6B |

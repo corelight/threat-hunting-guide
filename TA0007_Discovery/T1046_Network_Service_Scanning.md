@@ -15,3 +15,10 @@ If an intruder uses one or more of the above methods to attempt service discover
 6. Determine whether the behavior is acceptable based on the identity of the source, the ports involved, and the destinations.
 
 Not all items on the list are malicious. DHCP servers, for example, are commonly configured to ping an IP address to confirm if the address is in use before assigning it from the pool. Print servers with a large number of print queues attempt SNMP and/or network printing services to printers, even if those printers are offline. For this reason, print servers can cause large numbers of `S0` connections. Of course, software that scans legitimately, such as a corporate-sanctioned vulnerability scanner or an inventory management system, might appear in the list. Finally, network engineers conduct ad-hoc network scanning for troubleshooting purposes. If you run across network scanning, modify the original query to omit the records that are known to be benign, then resume hunting.
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Network Service Scanning Multiple IPs for Open Port|https://tdm.socprime.com/tdm/info/WGq767q7rEuP |
+|Network Service Scanning Multiple IPs|https://tdm.socprime.com/tdm/info/ezl5fGVY63MZ |

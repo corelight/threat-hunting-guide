@@ -27,3 +27,11 @@ To hunt for long connections without the Long Connections package installed:
 5. Filter out expected behaviors and thoroughly investigate anything that seems suspicious.
 
 Corelight also gives you the Encrypted Traffic Collection (ETC), which automatically looks for brute force password guessing attempts against SSH servers within a single connection.
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Potential Forced External Outbound Kerberos|https://tdm.socprime.com/tdm/info/kQqryT7wHeDC |
+|Possible Kerberos Brute Force Attempt|https://tdm.socprime.com/tdm/info/hprRVwll8xTF |
+|Multiple SSH Brute Inferences from Single IP|https://tdm.socprime.com/tdm/info/UR5BX111eXrH |

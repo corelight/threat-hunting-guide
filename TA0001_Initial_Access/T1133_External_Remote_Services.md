@@ -37,3 +37,14 @@ Corelight customers have access to the Encrypted Traffic Collection (ETC) that g
 - `SV` or `SC` for clients that appear to be version or capability scanning, respectively
 
 If you’d like to learn more about the Corelight ETC, please contact our sales team at (510) 281-0760.
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|RDP Scanning Potential Brute Force Common User Names|https://tdm.socprime.com/tdm/info/c7xY1roWE2IC |
+|Response from External Facing Service (Overview Query)|https://tdm.socprime.com/tdm/info/0DXnfAfjvHGb |
+|External Facing Service Using RFC 1918 Subnets|https://tdm.socprime.com/tdm/info/reE3a4YkWm3Z |
+|External Facing ICS Modbus|https://tdm.socprime.com/tdm/info/485HfRqE1bAz |
+|External Facing ICS DNP3|https://tdm.socprime.com/tdm/info/8E9slTATr6F5 |
+|Uncommon External Facing Application Service|https://tdm.socprime.com/tdm/info/JJwtAfOIy2rv |

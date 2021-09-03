@@ -20,3 +20,10 @@ certificate.key_type: rsa
 certificate.key_length: 1024
 certificate.exponent: 65537
 ```
+
+#### Sigma Queries for Hunting
+|Name|URL|
+|--|--|
+|Potentially Interesting user agent and mime type combination|https://tdm.socprime.com/tdm/info/FFnte4E6Qdte |
+|Multiple Abnormal non conforming HTTP Requests|https://tdm.socprime.com/tdm/info/Ngrrev0hOYBC |
+|HTTP Traffic with No HTTP Host Set or User Agent Set|https://tdm.socprime.com/tdm/info/opVUt7AJNj2w |

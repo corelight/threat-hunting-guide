@@ -13,6 +13,9 @@ Scan through the results and look for anything interesting or odd, such as downl
 
 As more attackers move to using TLS to encrypt exchanges between compromised clients and websites they control, there will be less visibility via the `http` log. To regain this visibility, consider using an enterprise SSL decryption solution and passing the decrypted HTTP traffic to your Corelight sensor.
 
-### Sigma Queries for Hunting
+#### Sigma Queries for Hunting
 
-- [Query 1](https://sample.link/path)
+|Name|URL|
+|--|--|
+|Executable Download Directly From IP|https://tdm.socprime.com/tdm/info/6Jre8uoqho4L |
+|Possible Windows Executable Download Without Matching Mime Type|https://tdm.socprime.com/tdm/info/RVksGP5CgaRK |

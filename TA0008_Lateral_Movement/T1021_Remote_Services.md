@@ -31,3 +31,12 @@ version.minor2: 2900
 version.minor3: 5512
 unparsed_version: Microsoft Outlook Express 6.00.2900.5512
 ```
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Multiple Windows Admin Share Connections|https://tdm.socprime.com/tdm/info/OzSf8lRPjeAf |
+|Windows Sysvol File Modification|https://tdm.socprime.com/tdm/info/HY0xVjQSZy4p |
+|Multiple Kerberos Tickets Used from Single Client|https://tdm.socprime.com/tdm/info/M1xnlmuPG46Y |
+|Multiple Windows Remote Registry Service Connections|https://tdm.socprime.com/tdm/info/EboXLO2AZD1S |

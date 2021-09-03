@@ -71,4 +71,11 @@ To hunt for lateral movement:
 2. Filter records where `id.resp_h` is a known file server, which reduces the results to potentially interesting connections.
 3. Review the `path` and `name` fields to identify which share the file was accessed from or written to, and determine if the behavior is suspicious.
 4. For additional context about the remaining interesting records, you can pivot to the `files` log, using the `uid` to collect specific information about the file(s). For example, the MD5/SHA1/SHA256 hash(es) are automatically calculated and can be used to identify known malware in external systems, such as VirusTotal.
-  1. There are also other fields and possibly logs available (for example, the `pe` log) that can be used to rule out uninteresting records.
+    1. There are also other fields and possibly logs available (for example, the `pe` log) that can be used to rule out uninteresting records.
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Potentially Interesting user agent and mime type combination|https://tdm.socprime.com/tdm/info/6zq27idnfPdG |
+|Executable from Webdav|https://tdm.socprime.com/tdm/info/K0s0t7hq8DVz |

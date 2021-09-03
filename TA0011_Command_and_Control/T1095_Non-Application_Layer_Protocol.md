@@ -27,3 +27,10 @@ To hunt for an intruder using a standard non-application layer protocol to tunne
 2. Aggregate those results by `id.orig_h`, `id.resp_h`, `id.resp_p` and summarize by count.
 3. Filter to remove ‘normal’ entries.
 4. Investigate any remaining items, focusing on the line items with the greatest count first.
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|SSH Inference Abnormal Client Activity|https://tdm.socprime.com/tdm/info/DxYkDjI8pMBj |
+|Custom Cryptographic inference determined by Corelight|https://tdm.socprime.com/tdm/info/0ds7shsorVkj |

@@ -36,3 +36,9 @@ Additionally, SOCKS is a commonly used proxy protocol that Corelight sensors nat
 - `id.resp_h`: the proxy IP address
 - `request`: the domain or IP the client is attempting to access
 - `user`: if it is an authenticated connection, the user using the proxy
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|External Proxy Detected (Overview Query)|https://tdm.socprime.com/tdm/info/Sit0tkQSDkyH |

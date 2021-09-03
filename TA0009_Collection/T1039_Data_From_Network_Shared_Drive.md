@@ -17,3 +17,10 @@ command: RETR
 arg: ftp://119.74.138.214/doc.exe
 reply_msg: Transfer OK
 ```
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Sensitive File Access Over SMB Share|https://tdm.socprime.com/tdm/info/2RUVrOzhI3gB |
+|Sensitive File Access On Admin Network Share|https://tdm.socprime.com/tdm/info/tSQlh2fAPZ81 |

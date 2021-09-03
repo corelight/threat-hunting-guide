@@ -56,3 +56,10 @@ resp_pkts: 5
 resp_ip_bytes: 585
 resp_cc: DE
 ```
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Client Sending Large Amount of Data|https://tdm.socprime.com/tdm/info/uOh8GJpa4nc8 |
+|Common Port with Unusual Service|https://tdm.socprime.com/tdm/info/kWqjDjcxr93r |
