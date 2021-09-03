@@ -2,6 +2,7 @@ If you contributed and you wish to be recognized, please place your name and con
 
 |Name                         |Handle or Contact Info    |
 |-----------------------------|--------------------------|
-|James Schweitzer             |@james_0x01                |
-|Mark Overholser              |@markoverholser            |
+|James Schweitzer             |@james_0x01               |
+|Mark Overholser              |@markoverholser           |
 |Nate Guagenti                |@neu5ron                  |
+|Gary Fisk                    |@fisk_gary                |
