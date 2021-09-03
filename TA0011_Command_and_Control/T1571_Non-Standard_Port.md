@@ -6,10 +6,10 @@ Hunting for C2 channels over commonly used ports is difficult, but not impossibl
 
 When hunting for C2 using commonly used ports:
 1. Initially focus on the `service` field, and search the `conn` log for entries where the `service` field isn’t what you would expect for the standard port (the service field could be either a `-` or another service).
-  1. Start with the most common protocols.
-    - TCP:80 (HTTP) TCP:443 (HTTPS)
-    - TCP:25 (SMTP)
-    - TCP/UDP:53 (DNS)
+    1. Start with the most common protocols.
+        - TCP:80 (HTTP) TCP:443 (HTTPS)
+        - TCP:25 (SMTP)
+        - TCP/UDP:53 (DNS)
 2. Corelight’s Encrypted Traffic Collection contains a package titled Encryption Detection. Encryption Detection generates a notice when cleartext traffic is observed on usually encrypted ports. Observing `notices` for `Viz::UnencryptedService` highlights this behavior and helps you identify potentially malicious connections using common ports.
 
 The Corelight Encrypted Traffic Collection package also has a feature that notifies you when a session uses instant encryption. The package looks for pre-shared keys or encrypted connections that begin without a traditional key negotiation. Observing `notices` for `Viz::CustomCrypto` highlights this behavior and helps you identify potentially malicious connections using common ports.
