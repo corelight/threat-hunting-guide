@@ -53,11 +53,8 @@ Each ATT&CK Tactic (goal or phase) is housed in its own folder, numbered with th
 
 ## Formatting/style suggestions
 
-Log names should be formatted as monospace text and referenced by the log name, not the on-disk filename, like so:  ``Check in the `conn` log...``
-> Check in the `conn` log...
-
-Field names should also be formatted as monospace text, like so: ``The `cookie` field can sometimes contain a username...``
-> The `cookie` field can sometimes contain a username...
-
-Value literals should also be formatted as monospace text, like so: ``If the number of bytes is `532` then...``
-> If the number of bytes is `532` then...
+|Suggestion|Markdown|Result|
+|---|---|---|
+|Log names should be formatted as monospace text and referenced by the log name, not the on-disk filename|``Check in the `conn` log...``| Check in the `conn` log...|
+|Field names should also be formatted as monospace text|``The `cookie` field can sometimes contain a username...``|The `cookie` field can sometimes contain a username...|
+|Value literals should also be formatted as monospace text|``If the number of bytes is `532` then...``|If the number of bytes is `532` then...|
