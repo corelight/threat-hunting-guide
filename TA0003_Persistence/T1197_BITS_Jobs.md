@@ -33,3 +33,9 @@ resp_mime_types: [“application/vnd.ms-cab-compressed”]
 accept_encoding: identity
 accept: */*
 ```
+
+#### Sigma Queries for Hunting
+
+|Name|URL|
+|--|--|
+|Microsoft BITS Leaving the Network|[./T1197-microsoft-bits-traffic-leaving-the-network.yml](./T1197-microsoft-bits-traffic-leaving-the-network.yml)|
