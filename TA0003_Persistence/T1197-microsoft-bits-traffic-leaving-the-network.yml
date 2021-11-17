@@ -1,0 +1,81 @@
+title: Microsoft BITS Leaving the Network
+description: 'This rule looks for HTTP traffic with a Microsoft BITS user agent
+string leaving the network. It is a hunt, and filtering will be required
+to notice interesting results. This Sigma query is designed to accompany the
+Corelight Threat Hunting Guide, which can be found here:
+  https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.persistence
+- attack.T1197
+- attack.t1197
+logsource:
+  product: zeek
+  service: http
+detection:
+  condition: selection and not 1 of filter*
+  filter_private_ipv4:
+    dest_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+  filter_private_ipv6:
+  - src_ip: ::1
+  - src_ip|startswith:
+    - 'fe80::'
+    - 'fc00::'
+  selection:
+    src_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+    user_agent|startswith: 'Microsoft BITS'
+fields:
+- uri
+- host
+- method
+- user_agent
+- id.orig_h
+- id.resp_h
+- id.resp_p
+- id.orig_p
+- response_body_len
+- status_code
+falsepositive:
+- There are legitimate uses of Microsoft BITS, so significant filtering will
+  be required to remove false positives, and will vary from network to network.
+level: low
