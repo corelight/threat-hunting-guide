@@ -1,0 +1,75 @@
+title: Possible Webshell PUT or POST to non-root URI without referer
+description: 'This rule looks for PUT, POST, or GET to a non-root (/) URI
+without a referer header, which could be an indication of direct access of a
+page without navigating the site. It is a hunt, and filtering will be required
+to notice interesting results. This Sigma query is designed to accompany the
+Corelight Threat Hunting Guide, which can be found here:
+  https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight, Nate Guagenti (@neu5ron)
+tags:
+- attack.persistence
+- attack.T1505.003
+- attack.t1505.003
+logsource:
+  product: zeek
+  service: http
+detection:
+  condition: selection and not 1 of filter*
+  filter_has_referrer:
+    referrer: '*'
+  filter_root_uri:
+    uri: /
+  filter_zero_response_body:
+    response_body_len: 0
+  filter_private_ipv4:
+    src_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+  filter_private_ipv6:
+  - src_ip: ::1
+  - src_ip|startswith:
+    - 'fe80::'
+    - 'fc00::'
+  selection:
+    method:
+    - POST
+    - PUT
+    - GET
+    status_code|startswith: '2'
+fields:
+- uri
+- host
+- method
+- user_agent
+- id.orig_h
+- id.resp_h
+- id.resp_p
+- id.orig_p
+- response_body_len
+- status_code
+- referrer
+falsepositive:
+- Applications and users that directly access non-root (/) URIs due to app
+configuration or bookmarked URLs can result in false positives. Will require
+lots of tuning and filtering, as well as combining with other contextual
+information (e.g. source country, AS organization, user-agent) to become
+valuable.
+level: low
