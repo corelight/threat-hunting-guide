@@ -37,8 +37,8 @@ detection:
     - '127.'
     - 169.254.
   filter_private_ipv6:
-  - src_ip: ::1
-  - src_ip|startswith:
+  - dest_ip: ::1
+  - dest_ip|startswith:
     - 'fe80::'
     - 'fc00::'
   selection:
