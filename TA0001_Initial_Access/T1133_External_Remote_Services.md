@@ -49,3 +49,7 @@ If you’d like to learn more about the Corelight ETC, please contact our sales 
 |External Facing ICS DNP3|https://tdm.socprime.com/tdm/info/8E9slTATr6F5 |
 |Uncommon External Facing Application Service|https://tdm.socprime.com/tdm/info/JJwtAfOIy2rv |
 |Inbound RDP from Internet|[./T1133-inbound-rdp-from-internet.yml](./T1133-inbound-rdp-from-internet.yml)|
+|Inbound SSH from Internet|[./T1133-inbound-ssh-from-internet.yml](./T1133-inbound-ssh-from-internet.yml)|
+|Outbound Connection on Known TeamViewer Port 5938|[./T1133-outbound-connection-to-teamviewer-port.yml](./T1133-outbound-connection-to-teamviewer-port.yml)|
+|SSL SNI Involves TeamViewer|[./T1133-ssl-with-teamviewer-sni.yml](./T1133-ssl-with-teamviewer-sni.yml)|
+|SSL SNI Involves GoToMyPC|[./T1133-ssl-with-gotomypc-sni.yml](./T1133-ssl-with-gotomypc-sni.yml)|

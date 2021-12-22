@@ -1,0 +1,28 @@
+title: SSL SNI Involves TeamViewer
+description: 'This rule reports on SSL sessions where the SNI (Server Name
+Indication) involves a TeamViewer domain. This query is a hunt, and filtering
+will be required to notice interesting results. This Sigma query is designed
+to accompany the Corelight Threat Hunting Guide, which can be found here:
+https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.initial_access
+- attack.T1133
+- attack.t1133
+logsource:
+  product: zeek
+  service: ssl
+detection:
+  condition: selection and not 1 of filter*
+  selection:
+    server_name|endswith: 'teamviewer.com'
+fields:
+- id.orig_h
+- id.resp_h
+- id.resp_p
+- server_name
+falsepositive:
+- 'Users browsing to TeamViewer domains with their browser will be flagged by this.
+Additionally, some organizations allow or encourage the use of TeamViewer, based on
+organizational policy.'
+level: low

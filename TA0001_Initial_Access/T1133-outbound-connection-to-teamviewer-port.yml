@@ -1,0 +1,79 @@
+title: Outbound Connection on Known TeamViewer Port 5938
+description: 'This rule reports on outbound connections on port TCP 5938, which
+is known to be a port used by TeamViewer. Use of TeamViewer in an enterprise
+environment can be a risk, allowing outide actors into the network. This query
+is a hunt, and filtering will be required to notice interesting results. This
+Sigma query is designed to accompany the Corelight Threat Hunting Guide, which
+can be found here: https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.initial_access
+- attack.T1133
+- attack.t1133
+logsource:
+  product: zeek
+  service: conn
+detection:
+  condition: selection and not 1 of filter*
+  filter_zero_response_data:
+    resp_bytes: 0
+  filter_dest_private_ipv4:
+    dest_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+  filter_dest_private_ipv6:
+  - dest_ip: ::1
+  - dest_ip|startswith:
+    - 'fe80::'
+    - 'fc00::'
+  selection:
+    src_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+    proto: 'tcp'
+    dest_port: 5938
+fields:
+- id.orig_h
+- id.resp_h
+- id.resp_p
+- service
+falsepositive:
+- 'Some organizations allow or encourage the use of TeamViewer, based on
+organizational policy.'
+level: low

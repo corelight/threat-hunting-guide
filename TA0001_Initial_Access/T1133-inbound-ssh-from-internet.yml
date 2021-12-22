@@ -1,0 +1,79 @@
+title: Inbound SSH from Internet
+description: 'This rule reports on inbound SSH sessions from Internet address
+space, which can be abused for Initial Access by a threat actor. It is a hunt,
+and filtering will be required to notice interesting results. This Sigma query
+is designed to accompany the Corelight Threat Hunting Guide, which can be found
+here:
+  https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.initial_access
+- attack.T1133
+- attack.t1133
+logsource:
+  product: zeek
+  service: conn
+detection:
+  condition: selection and not 1 of filter*
+  filter_zero_response_data:
+    resp_bytes: 0
+  filter_private_ipv4:
+    src_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+  filter_private_ipv6:
+  - src_ip: ::1
+  - src_ip|startswith:
+    - 'fe80::'
+    - 'fc00::'
+  selection:
+    dest_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+    service|contains: 'ssh'
+fields:
+- id.orig_h
+- id.resp_h
+- id.resp_p
+- service
+falsepositive:
+- Some organizations have intentionally-exposed SSH/SCP/SFTP services. If these
+  things are being exposed to the Internet intentionally, this will need to be
+  filtered out from the results.
+level: low
