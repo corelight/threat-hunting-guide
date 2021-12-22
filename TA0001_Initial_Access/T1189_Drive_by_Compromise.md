@@ -4,7 +4,7 @@ A drive-by compromise usually results when a file is surreptitiously downloaded 
 
 Begin the hunt with the `http` log and look for signs of downloaded executables:
 
-1. Start with http logs where resp_fuids is not empty. This means there was a file returned from the responder.
+1. Start with `http` logs where `resp_fuids` is not empty. This means there was a file returned from the responder.
 2. If the data volume is too large, filter out local (in-network) responders.  You can filter by joining the results to the `conn` log on the `uid`, then filtering out any records in which `local_resp` is `true` in the `conn` log.
 3. Review the `resp_mime_types` from the `http` log, and filter uninteresting results (for example, images, text, OCSP responses, and certificates). Often the most interesting results are executables, DLLs, and archives/containers
 4. Group the results by the `host` and `resp_mime_types` fields for easy analysis.
@@ -19,3 +19,4 @@ As more attackers move to using TLS to encrypt exchanges between compromised cli
 |--|--|
 |Executable Download Directly From IP|https://tdm.socprime.com/tdm/info/6Jre8uoqho4L |
 |Possible Windows Executable Download Without Matching Mime Type|https://tdm.socprime.com/tdm/info/RVksGP5CgaRK |
+|Download of File From Internet (Overview Query)|[./T1189-download-of-file-overview-query.yml](./T1189-download-of-file-overview-query.yml)|

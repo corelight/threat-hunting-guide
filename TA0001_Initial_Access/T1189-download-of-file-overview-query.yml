@@ -1,0 +1,98 @@
+title: Download of File From Internet (Overview Query)
+description: 'This rule reports on files downloaded from the internet to
+facilitate hunting for interesting items. This query is a hunt, and filtering
+will be required to notice interesting results. This Sigma query is designed to
+accompany the Corelight Threat Hunting Guide, which can be found here:
+https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.initial_access
+- attack.T1133
+- attack.t1133
+logsource:
+  product: zeek
+  service: http
+detection:
+  condition: (internal_ipv4_source or internal_ipv6_source) and selection and not 1 of filter*
+  internal_ipv4_source:
+    src_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+  internal_ipv6_source:
+    src_ip|startswith:
+    - 'fe80::'
+    - 'fc00::'
+  selection:
+    resp_fuids: '*'
+    status_code: 200
+  filter_dest_private_ipv4:
+    dest_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+  filter_dest_private_ipv6:
+  - dest_ip: ::1
+  - dest_ip|startswith:
+    - 'fe80::'
+    - 'fc00::'
+  filter_uninteresting_mimes:
+  - resp_mime_types|startswith:
+    - 'text/'
+    - 'image/'
+    - 'application/xml'
+    - 'application/font'
+    - 'video/'
+    - 'application/ocsp-response'
+    - 'application/pgp-signature'
+    - 'application/pdf'
+    - 'application/vnd.ms-opentype'
+    - 'application/x-font'
+fields:
+- id.orig_h
+- id.resp_h
+- id.resp_p
+- resp_fuids
+- resp_mime_types
+- server
+- method
+- uri
+falsepositive:
+- 'This query is not a detection. It will result in all kinds of false positives
+if used as-is. Start wit this, then filter out uninteresting things progressively
+until you get to "interesting."'
+level: low
