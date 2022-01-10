@@ -1,0 +1,42 @@
+title: Files as SMTP Attachments (Overview Query)
+description: 'This rule reports on files transmitted from the internet to
+facilitate hunting for interesting items. This query is a hunt, and filtering
+will be required to notice interesting results. This Sigma query is designed to
+accompany the Corelight Threat Hunting Guide, which can be found here:
+https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.initial_access
+- attack.T1133
+- attack.t1133
+logsource:
+  product: zeek
+  service: files
+detection:
+  condition: selection and not 1 of filter*
+  selection:
+    is_orig: 'true'
+    local_orig: 'false'
+    source: SMTP
+  filter_uninteresting_mimes:
+  - mime_type|startswith:
+    - 'text/'
+    - 'image/'
+    - 'application/xml'
+    - 'application/font'
+    - 'video/'
+    - 'application/ocsp-response'
+    - 'application/pgp-signature'
+    - 'application/vnd.ms-opentype'
+    - 'application/x-font'
+fields:
+- tx_hosts
+- rx_hosts
+- fuid
+- mime_type
+- md5
+falsepositive:
+- 'This query is not a detection. It will result in all kinds of false positives
+if used as-is. Start wit this, then filter out uninteresting things progressively
+until you get to "interesting."'
+level: low
