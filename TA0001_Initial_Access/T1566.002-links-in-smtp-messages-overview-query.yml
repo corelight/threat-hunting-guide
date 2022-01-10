@@ -1,0 +1,77 @@
+title: Links in SMTP Messages (Overview Query)
+description: 'This rule reports on links transmitted from the internet to
+facilitate hunting for interesting items. This query requires a Corelight sensor
+with the smtp_links package enabled. This query is a hunt, and filtering
+will be required to notice interesting results. This Sigma query is designed to
+accompany the Corelight Threat Hunting Guide, which can be found here:
+https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.initial_access
+- attack.T1566.002
+- attack.t1566.002
+logsource:
+  product: zeek
+  service: smtp_links
+detection:
+  condition: selection and not 1 of filter*
+  selection:
+    - dest_ip|startswith:
+      - '10.'
+      - 192.168.
+      - 172.16.
+      - 172.17.
+      - 172.18.
+      - 172.19.
+      - 172.20.
+      - 172.21.
+      - 172.22.
+      - 172.23.
+      - 172.24.
+      - 172.25.
+      - 172.26.
+      - 172.27.
+      - 172.28.
+      - 172.29.
+      - 172.30.
+      - 172.31.
+      - '127.'
+      - 169.254.
+      - 'fe80::'
+      - 'fc00::'
+    - dest_ip: ::1
+  filter_private_ipv4:
+    src_ip|startswith:
+    - '10.'
+    - 192.168.
+    - 172.16.
+    - 172.17.
+    - 172.18.
+    - 172.19.
+    - 172.20.
+    - 172.21.
+    - 172.22.
+    - 172.23.
+    - 172.24.
+    - 172.25.
+    - 172.26.
+    - 172.27.
+    - 172.28.
+    - 172.29.
+    - 172.30.
+    - 172.31.
+    - '127.'
+    - 169.254.
+  filter_private_ipv6:
+  - src_ip: ::1
+  - src_ip|startswith:
+    - 'fe80::'
+    - 'fc00::'
+fields:
+- link
+- uid
+falsepositive:
+- 'This query is not a detection. It will result in all kinds of false positives
+if used as-is. Start wit this, then filter out uninteresting things progressively
+until you get to "interesting."'
+level: low
