@@ -7,8 +7,8 @@ https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-
 author: Corelight
 tags:
 - attack.initial_access
-- attack.T1133
-- attack.t1133
+- attack.T1566.001
+- attack.t1566.001
 logsource:
   product: zeek
   service: files
