@@ -1,0 +1,44 @@
+title: SSL Connections With Non-OK Certificate Validity (Overview Query)
+description: 'Lists SSL/TLS connections with a certificate that does not validate,
+including anything self-signed or with an unknown root or issuer in the chain of
+trust. Normally a certificate would be signed by a trusted Certificate Authority.
+This could be an indication of a) malicious activity where attacker is creating
+and using own infrastructure or b) an unauthorized or incorrectly configured
+webserver. Sometimes Corelight/Zeek appliance/software does not have the same
+certificates installed as something like Chrome, Firefox or another browser. You
+can filter false positives of this scenario using the subject_issuer field. This
+Sigma query is designed to accompany the Corelight Threat Hunting Guide, which
+can be found here: https://www3.corelight.com/corelights-introductory-guide-to-threat-hunting-with-zeek-bro-logs'
+author: Corelight
+tags:
+- attack.defense_evasion
+- attack.t1553.004
+logsource:
+  product: zeek
+  service: ssl
+detection:
+  condition: not 1 of filter*
+  filter_ok:
+    validation_status: ok
+fields:
+- ts
+- id.orig_h
+- id.orig_p
+- id.resp_h
+- id.resp_p
+- client_issuer
+- client_subject
+- ja3
+- ja3s
+- issuer
+- subject
+- validation_status
+- established
+- cipher
+- version
+- uid
+falsepositive:
+- 'This query is not a detection. It will result in all kinds of false positives
+if used as-is. Start wit this, then filter out uninteresting things progressively
+until you get to "interesting."'
+level: low
